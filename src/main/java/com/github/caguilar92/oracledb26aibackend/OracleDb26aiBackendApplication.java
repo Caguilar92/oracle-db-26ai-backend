@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OracleDb26aiBackendApplication {
+public class
+OracleDb26aiBackendApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(OracleDb26aiBackendApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(OracleDb26aiBackendApplication.class, args);
+    }
 
 }
