@@ -1,29 +1,23 @@
 package com.github.caguilar92.oracledb26aibackend.vector_search.dao;
 
-import com.github.caguilar92.oracledb26aibackend.vector_search.dao.mappers.MaintenanceRequestRowMapper;
 import com.github.caguilar92.oracledb26aibackend.vector_search.model.MaintenanceRequest;
 import com.github.caguilar92.oracledb26aibackend.vector_search.model.MaintenanceSearchCriteria;
 import com.github.caguilar92.oracledb26aibackend.vector_search.model.SearchScope;
-import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-
 import java.sql.Types;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
 @Component
 public class MaintenanceRequestDAO {
-    private final MaintenanceRequestRowMapper rowMapper;
+    private final RowMapper<MaintenanceRequest> rowMapper;
     private final JdbcClient jdbcClient;
 
-    public MaintenanceRequestDAO(JdbcClient jdbcClient, MaintenanceRequestRowMapper rowMapper) {
+    public MaintenanceRequestDAO(JdbcClient jdbcClient, RowMapper<MaintenanceRequest> rowMapper) {
         this.jdbcClient = jdbcClient;
         this.rowMapper = rowMapper;
     }
